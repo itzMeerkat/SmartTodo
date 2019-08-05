@@ -1,6 +1,18 @@
-<body>
+<body style="text-align: center">
+    <p>This website is a demo for my natural language date parser</p>
+    <h2>What's new in this project</h2>
+    <p>Input any sentence that you may add to your todo list, if it contains any date or relative date, the program will detect it for you</p>
+    <p>
+    Example input: "Finish my homework before next friday". (say today is 2019 July 27)</br>
+    The program will know that today is 2019/7/27 saturday, and next friday is 2019/8/2.
+    </p>
+    <p>NOTE: lowercase only, don't add period at the end</p>
+    
     <form action="/parse" method="POST">
-        <input name="sentence" type="text"/>
+        <label for="ipt">Input: </label>
+        <input id="ipt" name="sentence" type="text"/></br>
         <input type="submit" value="Parse sentence">
     </form>
+    <p>Author: JiaYi Zhang</p>
+    <p>Email: pkazhang@ucdavis.edu</p>
 </body>
