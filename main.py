@@ -18,5 +18,6 @@ def parse():
     return "{}</br>Current date: {}</br>Projected date: {}".format(sentence,datetime2str(res[0]),datetime2str(res[1]))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0')
+
 
