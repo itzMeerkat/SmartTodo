@@ -15,6 +15,8 @@ def index():
 def parse():
     sentence = request.form['sentence']
     res = parser.getProjectedDate(sentence)
+    if res is None:
+        return "No date found"
     return "{}</br>Current date: {}</br>Projected date: {}".format(sentence,datetime2str(res[0]),datetime2str(res[1]))
 
 if __name__ == '__main__':

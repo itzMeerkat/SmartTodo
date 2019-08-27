@@ -41,6 +41,10 @@ class Core:
         elif roottag == 'Pp_Weekdays':
             d['Prep'] = word[0]
             d['Date-offset'] = word[1]
+        elif roottag == 'Pp_Rel_Week':
+            d['Prep'] = word[0]
+            d['Pronoun'] = word[1]
+            d['Date-offset'] = 'monday'
         return d
 
     def calcActualDate(self, slot):
@@ -50,6 +54,7 @@ class Core:
         pron = slot['Pronoun']
         offset = slot['Date-offset']
         base_weekday = base.weekday()
+        print(slot)
         if offset in word2digit:
             target_weekday = word2digit[offset]
         else:
@@ -75,6 +80,7 @@ class Core:
             if len(res[i][1]) > max_len:
                 max_len = len(res[i][1])
                 max_ind = i
+        print(max_ind,max_len)
         actualDate = None
         if max_ind != -1:
             slots = self.slotFilling(res[max_ind][0],res[max_ind][1],res[max_ind][2],res[max_ind][3])
