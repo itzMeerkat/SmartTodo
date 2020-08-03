@@ -1,5 +1,8 @@
 from flask import Flask, request
 from core import Core
+
+import logging
+
 app = Flask(__name__)
 
 parser = Core()
@@ -20,6 +23,7 @@ def parse():
     return "{}</br>Current date: {}</br>Projected date: {}".format(sentence,datetime2str(res[0]),datetime2str(res[1]))
 
 if __name__ == '__main__':
+    
     app.run(host='0.0.0.0')
 
 
